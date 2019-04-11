@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wypozyczalnia>
+	<Klienci>
+		<Klient>
+			<DaneOsobowe>
+				<Imie>Karol</Imie>
+				<Nazwisko>Bawarski</Nazwisko>
+				<Pesel>12734528641</Pesel>
+				<Adres>
+					<Kraj>Polska</Kraj>
+					<Miasto>Bialystok</Miasto>
+					<Ulica>Zamkowa</Ulica>
+					<KodPocztowy>48-122</KodPocztowy>
+				</Adres>
+			</DaneOsobowe>
+			<DaneKontaktowe>
+				<NumerTelefonu>584027649</NumerTelefonu>
+				<Email>kbawarski@interia.pl</Email>
+			</DaneKontaktowe>
+			<Wypozyczenia>
+				<Wypozyczenie>
+					<Informacje>
+						<Kwota waluta="zl">295.25</Kwota>
+						<DataWypozyczenia>2018-03-15</DataWypozyczenia>
+						<TerminZwrotu>2018-03-19</TerminZwrotu>
+					</Informacje>
+					<Sprzety>
+						<Element idsref="333330"/>
+						<Element idsref="333331"/>
+					</Sprzety>
+				</Wypozyczenie>
+			</Wypozyczenia>
+		</Klient>
+		<Klient>
+			<DaneOsobowe>
+				<Imie>Agnieszka</Imie>
+				<Nazwisko>Polańska</Nazwisko>
+				<Pesel>80592433201</Pesel>
+				<Adres>
+					<Kraj>Polska</Kraj>
+					<Miasto>Poznań</Miasto>
+					<Ulica>Obrońców Pomnika</Ulica>
+					<KodPocztowy>35-128</KodPocztowy>
+				</Adres>
+			</DaneOsobowe>
+			<DaneKontaktowe>
+				<NumerTelefonu>226946000</NumerTelefonu>
+				<Email>agus@interia.pl</Email>
+			</DaneKontaktowe>
+			<Wypozyczenia>
+				<Wypozyczenie>
+					<Informacje>
+						<Kwota waluta="zl">320.50</Kwota>
+						<DataWypozyczenia>2018-02-10</DataWypozyczenia>
+						<TerminZwrotu>2018-02-14</TerminZwrotu>
+					</Informacje>
+					<Sprzety>
+						<Element idsref="333332"/>
+						<Element idsref="333333"/>
+					</Sprzety>
+				</Wypozyczenie>
+			</Wypozyczenia>
+		</Klient>
+		<Klient>
+			<DaneOsobowe>
+				<Imie>Michał</Imie>
+				<Nazwisko>Kowalski</Nazwisko>
+				<Pesel>80592653246</Pesel>
+				<Adres>
+					<Kraj>Polska</Kraj>
+					<Miasto>Łódź</Miasto>
+					<Ulica>Śmigłego-Rydza</Ulica>
+					<KodPocztowy>49-128</KodPocztowy>
+				</Adres>
+			</DaneOsobowe>
+			<DaneKontaktowe>
+				<NumerTelefonu>846372123</NumerTelefonu>
+				<Email>mkar@wp.pl</Email>
+			</DaneKontaktowe>
+			<Wypozyczenia>
+				<Wypozyczenie>
+					<Informacje>
+						<Kwota waluta="zl">110.50</Kwota>
+						<DataWypozyczenia>2017-02-10</DataWypozyczenia>
+						<TerminZwrotu>2017-02-14</TerminZwrotu>
+					</Informacje>
+					<Sprzety>
+						<Element idsref="333334"/>
+					</Sprzety>
+				</Wypozyczenie>
+				<Wypozyczenie>
+					<Informacje>
+						<Kwota waluta="zl">45.50</Kwota>
+						<DataWypozyczenia>2017-02-10</DataWypozyczenia>
+						<TerminZwrotu>2017-02-14</TerminZwrotu>
+					</Informacje>
+					<Sprzety>
+						<Element idsref="333335"/>
+					</Sprzety>
+				</Wypozyczenie>
+			</Wypozyczenia>
+		</Klient>
+		<Klient>
+			<DaneOsobowe>
+				<Imie>Sebastian</Imie>
+				<Nazwisko>Czajski</Nazwisko>
+				<Pesel>80592653246</Pesel>
+				<Adres>
+					<Kraj>Polska</Kraj>
+					<Miasto>Łódź</Miasto>
+					<Ulica>Śmigłego-Rydza</Ulica>
+					<KodPocztowy>49-128</KodPocztowy>
+				</Adres>
+			</DaneOsobowe>
+			<DaneKontaktowe>
+				<NumerTelefonu>846372123</NumerTelefonu>
+				<Email>mkar@wp.pl</Email>
+			</DaneKontaktowe>
+			<Wypozyczenia>
+				<Wypozyczenie>
+					<Informacje>
+						<Kwota waluta="zl">110.50</Kwota>
+						<DataWypozyczenia>2017-02-10</DataWypozyczenia>
+						<TerminZwrotu>2017-02-14</TerminZwrotu>
+					</Informacje>
+					<Sprzety>
+						<Element idsref="333336"/>
+					</Sprzety>
+				</Wypozyczenie>
+				<Wypozyczenie>
+					<Informacje>
+						<Kwota waluta="zl">45.50</Kwota>
+						<DataWypozyczenia>2017-02-10</DataWypozyczenia>
+						<TerminZwrotu>2017-02-14</TerminZwrotu>
+					</Informacje>
+					<Sprzety>
+						<Element idsref="333337"/>
+					</Sprzety>
+				</Wypozyczenie>
+			</Wypozyczenia>
+		</Klient>
+		<Klient>
+            <DaneOsobowe>
+				<Imie>Janusz</Imie>
+				<Nazwisko>Tracz</Nazwisko>
+				<Pesel>66677766693</Pesel>
+				<Adres>
+					<Kraj>Polska</Kraj>
+					<Miasto>Lututów</Miasto>
+					<Ulica>Nowobogacka</Ulica>
+					<KodPocztowy>72-158</KodPocztowy>
+				</Adres>
+			</DaneOsobowe>
+			<DaneKontaktowe>
+                    <NumerTelefonu>669256741</NumerTelefonu>
+                    <Email>tracz@o2.pl</Email>
+			</DaneKontaktowe>
+			<Wypozyczenia>
+				<Wypozyczenie>
+					<Informacje>
+						<Kwota waluta="zl">540.00</Kwota>
+						<DataWypozyczenia>2018-01-15</DataWypozyczenia>
+						<TerminZwrotu>2018-03-19</TerminZwrotu>
+					</Informacje>
+					<Sprzety>
+						<Element idsref="333332"/>
+						<Element idsref="333333"/>
+						<Element idsref="333331"/>
+					</Sprzety>
+				</Wypozyczenie>
+			</Wypozyczenia>
+		</Klient>
+	</Klienci>
+	
+	<Magazyn>
+		<Kategoria nazwa="VIP narciarz">
+			<Oferta>
+				<Informacje>
+					<Opis>zestawy narciarskie z butami i googlami</Opis>
+					<Cennik>
+						<Termin nazwa="1 dzien">
+							<Kwota waluta="zl">25.00</Kwota>
+							<Kwota waluta="euro">5.25</Kwota>
+						</Termin>
+						<Termin nazwa="1 tydzien">
+							<Kwota waluta="zl">100.00</Kwota>
+							<Kwota waluta="euro">25.00</Kwota>
+						</Termin>
+					</Cennik>
+				</Informacje>
+				<Sprzet ids="333330" dostepny="true">
+					<Informacje>
+						<Opis>zestaw dla zaawansowanego</Opis>
+					</Informacje>
+					<Narty>
+						<Serwis>
+							<Wydarzenie>
+								<Opis>Uzupelnienie masy slizgu</Opis>
+								<Rozpoczecie>2017-02-05</Rozpoczecie>
+								<Zakonczenie>2017-02-19</Zakonczenie>
+							</Wydarzenie>
+						</Serwis>
+						<Zdjecie>images/atomic.jpg</Zdjecie>
+                        <Marka>Atomic</Marka>
+                        <Model>Performer SC</Model>
+                        <DaneTechniczne>
+                            <StylJazdy>allmountain</StylJazdy>
+                            <Dlugosc>165</Dlugosc>
+                            <Profil>rocker</Profil>
+                            <Trudnosc>zaawansowany</Trudnosc>
+                        </DaneTechniczne>
+					</Narty>
+                    <WiazaniaNarciarskie>
+						<Zdjecie>images/wiazanianarciarskie.jpg</Zdjecie>
+                        <Marka>Atomic</Marka>
+						<Model>Lithium 10</Model>
+                        <DaneTechniczne>
+                            <DIN>5</DIN>
+                            <Trudnosc>zaawansowany</Trudnosc>
+                            <MaksymalnaWaga>100</MaksymalnaWaga>
+                        </DaneTechniczne>
+                    </WiazaniaNarciarskie>
+					<ButyNarciarskie>
+						<Marka>Salomon</Marka>
+						<DaneTechniczne>
+							<Rozmiar>45</Rozmiar>
+							<Twardosc>srednie</Twardosc>
+						</DaneTechniczne>
+					</ButyNarciarskie>
+					<Google>
+						<Zdjecie>images/google.jpg</Zdjecie>
+						<Marka>Julbo</Marka>
+						<Model>Luna Cameleon</Model>
+						<DaneTechniczne>
+							<KolorSoczewek>S2</KolorSoczewek>
+							<Wentylacja>srednia</Wentylacja>
+							<Technologie>
+								<Technologia>Glare Controle SNOW TIGER</Technologia>
+								<Technologia>Carbon Rear</Technologia>
+							</Technologie>
+						</DaneTechniczne>
+                    </Google>
+				</Sprzet>
+				<Sprzet ids="333331" dostepny="true">
+					<Informacje>
+						<Opis>zestaw dla wprawionego</Opis>
+					</Informacje>
+                    <Narty>
+						<Zdjecie>images/atomic.jpg</Zdjecie>
+                        <Marka>Volkl</Marka>
+                        <Model>RTM 7.6</Model>
+                            <DaneTechniczne>
+                                <StylJazdy>allmountain</StylJazdy>
+                                <Dlugosc>168</Dlugosc>
+                                <Profil>Camber</Profil>
+                                <Trudnosc>srednio-zaawansowany</Trudnosc>
+                        </DaneTechniczne>
+                    </Narty>
+                    <WiazaniaNarciarskie>
+						<Zdjecie>images/wiazanianarciarskie.jpg</Zdjecie>
+                        <Marka>Marker</Marka>
+                        <DaneTechniczne>
+                            <DIN>4</DIN>
+                            <Trudnosc>poczatkujacy</Trudnosc>
+                            <MaksymalnaWaga>65</MaksymalnaWaga>
+                        </DaneTechniczne>
+                    </WiazaniaNarciarskie>
+					<ButyNarciarskie>
+						<Zdjecie>images/butynarciarskie.jpg</Zdjecie>
+						<Marka>Salomon</Marka>
+						<DaneTechniczne>
+							<Rozmiar>45</Rozmiar>
+							<Twardosc>srednie</Twardosc>
+						</DaneTechniczne>
+					</ButyNarciarskie>
+					<Google>
+						<Zdjecie>images/google.jpg</Zdjecie>
+						<Marka>Julbo</Marka>
+						<Model>Luna Cameleon</Model>
+						<DaneTechniczne>
+							<KolorSoczewek>S2</KolorSoczewek>
+							<Wentylacja>srednia</Wentylacja>
+							<Technologie>
+								<Technologia>Glare Controle SNOW TIGER</Technologia>
+								<Technologia>Carbon Rear</Technologia>
+							</Technologie>
+						</DaneTechniczne>
+                    </Google>
+				</Sprzet>
+			</Oferta>
+		</Kategoria>
+		
+		<Kategoria nazwa="VIP snowboardzista">
+			<Oferta>
+				<Informacje>
+					<Opis>zestawy snowboardowe z butami i kaskiem</Opis>
+					<Cennik>
+						<Termin nazwa="1 dzien">
+							<Kwota waluta="zl">25.00</Kwota>
+							<Kwota waluta="euro">5.25</Kwota>
+						</Termin>
+						<Termin nazwa="1 tydzien">
+							<Kwota waluta="zl">100.00</Kwota>
+							<Kwota waluta="euro">25.00</Kwota>
+						</Termin>
+					</Cennik>
+				</Informacje>
+				<Sprzet ids="333338" dostepny="true">
+					<Informacje>
+						<Opis>zestaw dla fanow burtona</Opis>
+					</Informacje>
+					<Snowboard>
+						<Serwis>
+							<Wydarzenie>
+								<Opis>Ostrzenie krawedzi</Opis>
+								<Rozpoczecie>2017-02-05</Rozpoczecie>
+								<Zakonczenie>2017-02-19</Zakonczenie>
+							</Wydarzenie>
+						</Serwis>
+						<Zdjecie>images/snowboard.jpg</Zdjecie>
+                        <Marka>Burton</Marka>
+                        <Model>Clash</Model>
+                        <DaneTechniczne>
+                            <StylJazdy>allmountain</StylJazdy>
+                            <Dlugosc>151</Dlugosc>
+                            <Profil>camber</Profil>
+							<Flex>9</Flex>
+                            <Trudnosc>zaawansowany</Trudnosc>
+                        </DaneTechniczne>
+					</Snowboard>
+                    <WiazaniaSnowboardowe>
+						<Zdjecie>images/wiazaniasnowboardowe.jpg</Zdjecie>
+                        <Marka>Burton</Marka>
+						<Model>Scribe Est</Model>
+                        <DaneTechniczne>
+							<Twardosc>miekkie</Twardosc>
+                            <Trudnosc>zaawansowany</Trudnosc>
+                        </DaneTechniczne>
+                    </WiazaniaSnowboardowe>
+					<ButySnowboardowe>
+						<Zdjecie>images/butysnowboardowe.jpg</Zdjecie>
+						<Marka>Salomon</Marka>
+						<DaneTechniczne>
+							<Typ>strap-in</Typ>
+							<Rozmiar>41</Rozmiar>
+							<Twardosc>srednie</Twardosc>
+						</DaneTechniczne>
+					</ButySnowboardowe>
+					<Kask>
+						<Zdjecie>images/kask.jpg</Zdjecie>
+						<Marka>Uvex</Marka>
+						<Model>Steel</Model>
+						<DaneTechniczne>
+							<Kolor>niebiesko-zielony</Kolor>
+							<Rozmiar>duzy</Rozmiar>
+							<Technologie>
+								<Technologia>UltraFoam</Technologia>
+								<Technologia>Fast-Strap</Technologia>
+							</Technologie>
+						</DaneTechniczne>
+                    </Kask>
+				</Sprzet>
+			</Oferta>
+		</Kategoria>
+		
+		<Kategoria nazwa="Gotowy narciarz">
+		
+			<Kategoria nazwa="Damskie">
+				<Oferta>
+					<Informacje>
+						<Opis>standardowe propozycje</Opis>
+						<Cennik>
+							<Termin nazwa="1 dzien">
+								<Kwota waluta="zl">6.25</Kwota>
+								<Kwota waluta="euro">18.00</Kwota>
+							</Termin>
+						</Cennik>
+					</Informacje>
+					<Sprzet ids="333330" dostepny="false">
+						<Informacje>
+							<Opis>idealne dla poczatkujacych</Opis>
+						</Informacje>
+						<Narty>
+							<Zdjecie>images/head.jpg</Zdjecie>
+							<Marka>Rossignol</Marka>
+							<Model>Passion 10</Model>
+							<DaneTechniczne>
+								<StylJazdy>allmountain</StylJazdy>
+								<Dlugosc>156</Dlugosc>
+								<Profil>flat</Profil>
+								<Trudnosc>poczatkujacy</Trudnosc>
+							</DaneTechniczne>
+						</Narty>
+						<WiazaniaNarciarskie>
+							<Marka>Rossignol xpress 10</Marka>
+							<DaneTechniczne>
+								<DIN>7</DIN>
+								<Trudnosc>poczatkujacy</Trudnosc>
+								<MaksymalnaWaga>70</MaksymalnaWaga>
+							</DaneTechniczne>
+						</WiazaniaNarciarskie>
+					</Sprzet>
+					<Sprzet ids="333331" dostepny="false">
+						<Informacje>
+							<Opis>narty i wiazania dla tych juz po pierwszych zjazdach</Opis>
+						</Informacje>
+						<Narty>
+							<Zdjecie>images/atomic.jpg</Zdjecie>
+							<Marka>Rossignol</Marka>
+							<Model>Axium 100</Model>
+							<DaneTechniczne>
+								<StylJazdy>allmountain</StylJazdy>
+								<Dlugosc>146</Dlugosc>
+								<Profil>camber</Profil>
+								<Trudnosc>srednio-zaawansowany</Trudnosc>
+							</DaneTechniczne>
+						</Narty>
+						<WiazaniaNarciarskie>
+							<Marka>Rossignol</Marka>
+							<DaneTechniczne>
+								<DIN>2</DIN>
+								<Trudnosc>srednio-zaawansowany</Trudnosc>
+								<MaksymalnaWaga>80</MaksymalnaWaga>
+							</DaneTechniczne>
+						</WiazaniaNarciarskie>
+					</Sprzet>
+				</Oferta>
+			</Kategoria>
+			
+			<Kategoria nazwa="Dzieciece">
+				<Oferta>
+					<Informacje>
+						<Opis>standardowe propozycje</Opis>
+						<Cennik>
+							<Termin nazwa="1 dzien">
+								<Kwota waluta="zl">6.25</Kwota>
+								<Kwota waluta="euro">18.00</Kwota>
+							</Termin>
+						</Cennik>
+					</Informacje>
+					<Sprzet ids="333332" dostepny="true">
+						<Informacje>
+							<Opis>dla poczatkujacej narciarki</Opis>
+						</Informacje>
+						<Narty>
+							<Marka>Elan</Marka>
+							<Model>Race PRO GXR</Model>
+							<DaneTechniczne>
+								<StylJazdy>allmountain</StylJazdy>
+								<Dlugosc>100</Dlugosc>
+								<Profil>camber</Profil>
+								<Trudnosc>poczatkujacy</Trudnosc>
+							</DaneTechniczne>
+						</Narty>
+						<WiazaniaNarciarskie>
+							<Marka>Rossignol Comp J 4.5</Marka>
+							<DaneTechniczne>
+								<DIN>1</DIN>
+								<Trudnosc>poczatkujacy</Trudnosc>
+								<MaksymalnaWaga>50</MaksymalnaWaga>
+							</DaneTechniczne>
+						</WiazaniaNarciarskie>
+					</Sprzet>
+				</Oferta>
+				<Oferta>
+					<Informacje>
+						<Opis>propozycje deluxe</Opis>
+						<Cennik>
+							<Termin nazwa="1 dzien">
+								<Kwota waluta="zl">10.25</Kwota>
+								<Kwota waluta="euro">3.5</Kwota>
+							</Termin>
+							<Termin nazwa="3 dni">
+								<Kwota waluta="zl">20.00</Kwota>
+								<Kwota waluta="euro">7.00</Kwota>
+							</Termin>
+						</Cennik>
+					</Informacje>
+					<Sprzet ids="333333" dostepny="false">
+						<Informacje>
+							<Opis>zestaw dla juniora juz po pierwszych zjazdach</Opis>
+						</Informacje>
+                        <Narty>
+							<Marka>Head</Marka>
+							<Model>Supershape Team </Model>
+							<DaneTechniczne>
+								<StylJazdy>allmountain</StylJazdy>
+								<Dlugosc>110</Dlugosc>
+								<Profil>rocker</Profil>
+								<Trudnosc>srednio-zaawansowany</Trudnosc>
+							</DaneTechniczne>
+						</Narty>
+						<WiazaniaNarciarskie>
+							<Marka>Tyrolia LRX 4.5</Marka>
+							<DaneTechniczne>
+								<DIN>2</DIN>
+								<Trudnosc>srednio-zaawansowany</Trudnosc>
+								<MaksymalnaWaga>50</MaksymalnaWaga>
+							</DaneTechniczne>
+						</WiazaniaNarciarskie>
+					</Sprzet>
+					<Sprzet ids="333334" dostepny="true">
+						<Informacje>
+							<Opis>Model Souphead dedykujemy małym narciarzom, którym niestraszne są wielkie stoki. Konstrukcja Twin Tip nadaje nartom freestyle’owego charakteru – dzioby i pięty nart są lekko podniesione, co umożliwia jazdę zarówno przodem jak i tyłem.</Opis>
+						</Informacje>
+						<Narty>
+							<Marka>Head</Marka>
+							<Model>Souphead SLR</Model>
+							<DaneTechniczne>
+								<StylJazdy>allmountain</StylJazdy>
+								<Dlugosc>127</Dlugosc>
+								<Profil>flying-v</Profil>
+								<Trudnosc>srednio-zaawansowany</Trudnosc>
+							</DaneTechniczne>
+						</Narty>
+						<WiazaniaNarciarskie>
+							<Marka>Head SLR 7.5</Marka>
+							<DaneTechniczne>
+								<DIN>7</DIN>
+								<Trudnosc>srednio-zaawansowany</Trudnosc>
+								<MaksymalnaWaga>65</MaksymalnaWaga>
+							</DaneTechniczne>
+						</WiazaniaNarciarskie>
+					</Sprzet>
+				</Oferta>		
+			</Kategoria>
+		</Kategoria>
+		<Kategoria nazwa="buty snowboardowe">
+			<Oferta>
+				<Informacje>
+					<Opis>buty snowboardowe</Opis>
+					<Cennik>
+						<Termin nazwa="1 dzien">
+							<Kwota waluta="zl">15.00</Kwota>
+							<Kwota waluta="euro">6.00</Kwota>
+						</Termin>
+						<Termin nazwa="3 dni">
+							<Kwota waluta="zl">35.00</Kwota>
+							<Kwota waluta="euro">15.00</Kwota>
+						</Termin>
+					</Cennik>
+				</Informacje>
+				<Sprzet ids="333335" dostepny="false">
+					<Informacje>
+						<Opis>Nowoczesna technologia butów zapewnia niebywały komfort noszenia oraz zapewnia precyzyjną kontole nad prowadzoną deską.</Opis>
+					</Informacje>
+					<ButySnowboardowe>
+						<Zdjecie>images/butysnowboardowe.jpg</Zdjecie>
+						<Marka>THIRTYTWO</Marka>
+						<Model>LASHED FT WMN</Model>
+						<DaneTechniczne>
+						<Typ>strap-in</Typ>
+						<Rozmiar>37</Rozmiar>
+						<Twardosc>miekkie</Twardosc>
+					</DaneTechniczne>
+					</ButySnowboardowe>
+				</Sprzet>
+				<Sprzet ids="333336" dostepny="true">
+					<Informacje>
+						<Opis> wysokiej jakości miękki but dla osoby zaczynającej swoją przygodę ze snowboardem. Lekka podeszwa ze świetną amortyzacją, system 360 zapobiegający unoszeniu się stopy w bucie oraz termo-formowalna wkładka. To w zupełności wystarczy żeby spędzić miło i komfortowo  swój  pierwszy sezon na desce</Opis>
+					</Informacje>
+					<ButySnowboardowe>
+						<Zdjecie>images/butysnowboardowe.jpg</Zdjecie>
+						<Marka>NORTHWAVE</Marka>
+						<Model>DIME WMN</Model>
+						<DaneTechniczne>
+						<Typ>strap-in</Typ>
+						<Rozmiar>38</Rozmiar>
+						<Twardosc>srednie</Twardosc>
+						</DaneTechniczne>
+					</ButySnowboardowe>
+				</Sprzet>
+				<Sprzet ids="333337" dostepny="true">
+					<Informacje>
+						<Opis>Dzięki zastosowanej w butach Moto Boa® konstrukcji Total Comfort nie musisz obawiać się niewygody, która może wiązać się z używaniem nowych butów. Dzięki naukowo opracowanym, ekskluzywnym technologiom marki Burton, otrzymujesz świetnie dopasowany but wewnętrzny – tak jakby był już przez ciebie noszony – który zapewnia ciepło i wygodę od momentu założenia na nogi.</Opis>
+					</Informacje>
+					<ButySnowboardowe>
+						<Zdjecie>images/butysnowboardowe.jpg</Zdjecie>
+						<Marka>BURTON</Marka>
+						<Model>MOTO BOA</Model>
+						<DaneTechniczne>
+						<Typ>step-in</Typ>
+						<Rozmiar>46</Rozmiar>
+						<Twardosc>miekkie</Twardosc>
+						<Technologie>
+							<Technologia>Total Comfort</Technologia>
+							<Technologia>Giga Flex</Technologia>
+						</Technologie>
+						</DaneTechniczne>
+					</ButySnowboardowe>
+				</Sprzet>
+			</Oferta>
+		</Kategoria>
+		<Kategoria nazwa="kijki">
+			<Oferta>
+				<Informacje>
+					<Opis>same kijki</Opis>
+					<Cennik>
+						<Termin nazwa="1 dzien">
+							<Kwota waluta="zl">4.00</Kwota>
+							<Kwota waluta="euro">6.00</Kwota>
+						</Termin>
+						<Termin nazwa="3 dni">
+							<Kwota waluta="zl">4.50</Kwota>
+							<Kwota waluta="euro">11.00</Kwota>
+						</Termin>
+					</Cennik>
+				</Informacje>
+				<Sprzet ids="333339" dostepny="true">
+					<Informacje>
+						<Opis>kijki dla wyczynowcow</Opis>
+					</Informacje>
+					<Kijki>
+						<Zdjecie>images/kijki.jpg</Zdjecie>
+						<Marka>BURTON</Marka>
+						<DaneTechniczne>
+							<Dlugosc>89</Dlugosc>
+						</DaneTechniczne>
+					</Kijki>
+				</Sprzet>
+				<Sprzet ids="333340" dostepny="true">
+					<Informacje>
+						<Opis>kijki do sportow biegowych</Opis>
+					</Informacje>
+					<Kijki>
+						<Zdjecie>images/kijki.jpg</Zdjecie>
+						<Marka>BURTON</Marka>
+						<DaneTechniczne>
+							<Dlugosc>110</Dlugosc>
+						</DaneTechniczne>
+					</Kijki>
+				</Sprzet>
+				<Sprzet ids="333341" dostepny="true">
+					<Informacje>
+						<Opis>krotkie kijki dla dzieci</Opis>
+					</Informacje>
+					<Kijki>
+						<Zdjecie>images/kijki.jpg</Zdjecie>
+						<Marka>Winter</Marka>
+						<DaneTechniczne>
+							<Dlugosc>52</Dlugosc>
+						</DaneTechniczne>
+					</Kijki>
+				</Sprzet>
+			</Oferta>
+		</Kategoria>
+	</Magazyn>
+</Wypozyczalnia>

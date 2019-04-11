@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="Wypozyczalnia">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="Klienci">
+				<xs:complexType>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="Klient" type="klientTyp"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Magazyn">
+				<xs:complexType>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element name="Kategoria" type="kategoriaTyp"/>
+						<xs:element name="Oferta" type="ofertaTyp"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:unique name="sprzetUnique">
+		<xs:selector xpath=".//Sprzet"/>
+		<xs:field xpath="@ids"/>
+	</xs:unique>
+	<xs:key name="sprzetKey">
+		<xs:selector xpath=".//Sprzet" />
+		<xs:field xpath="@ids" />
+	</xs:key>
+	<xs:keyref name="sprzetKeyRef" refer="sprzetKey">
+        <xs:selector xpath="Klienci/Klient/Wypozyczenia/Wypozyczenie/Sprzety/Element" />
+        <xs:field xpath="@idsref" />
+    </xs:keyref>
+</xs:element>
+
+<xs:simpleType name="kwotaTyp">
+	<xs:restriction base="xs:decimal">
+		<xs:fractionDigits value="2"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="walutaTyp">
+   <xs:restriction base="xs:string">
+		<xs:enumeration value="zl"/>
+		<xs:enumeration value="euro"/>
+   </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="str20Typ">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value = "20"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="str50Typ">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value = "50"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<!-- ============================================================================ -->
+<!-- ============================================================================ -->
+<!-- MAGAZYN ==================================================================== -->
+
+
+<xs:simpleType name="opisTyp">
+	<xs:restriction base="xs:string">
+		<xs:minLength value = "10"/>
+		<xs:maxLength value = "500"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="rozmiarTyp">
+	<xs:restriction base="xs:string">
+		<xs:minLength value = "1"/>
+		<xs:maxLength value = "10"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="idTyp">
+   <xs:restriction base="xs:int">
+		<xs:pattern value="[1-9][0-9][0-9][0-9][0-9][0-9]"/>
+   </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="serwisTyp">
+	<xs:sequence>
+		<xs:element name="Wydarzenie" minOccurs="1" maxOccurs="unbounded">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="Opis" type="opisTyp"/>
+					<xs:element name="Rozpoczecie" type="xs:date"/>
+					<xs:element name="Zakonczenie" type="xs:date"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="przedmiotBazowyTyp">
+	<xs:sequence>
+		<xs:element name="Serwis" type="serwisTyp" minOccurs="0"/>
+		<xs:element name="Zdjecie" type="str200Typ" minOccurs="0"/>
+		<xs:element name="Marka" type="str20Typ"/>
+		<xs:element name="Model" type="str50Typ" minOccurs="0"/>
+	</xs:sequence>
+</xs:complexType>
+
+<!-- ============================================================================ -->
+<!-- KONKRETNE PRZEDMIOTY -->
+
+<xs:complexType name="technologieTyp">
+	<xs:sequence maxOccurs="unbounded">
+		<xs:element name="Technologia" type="str50Typ"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="profilPrzedmiotTyp">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="camber"/>
+		<xs:enumeration value="rocker"/>
+		<xs:enumeration value="flying-v"/>
+		<xs:enumeration value="flat"/>
+		<xs:enumeration value="reversed camber"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="stylJazdyTyp">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="race"/>
+		<xs:enumeration value="cross"/>
+		<xs:enumeration value="allmountain"/>
+		<xs:enumeration value="powder"/>
+		<xs:enumeration value="freeride"/>
+		<xs:enumeration value="park"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="trudnoscTyp">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="poczatkujacy"/>
+		<xs:enumeration value="srednio-zaawansowany"/>
+		<xs:enumeration value="zaawansowany"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="twardoscTyp">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="miekkie"/>
+		<xs:enumeration value="srednie"/>
+		<xs:enumeration value="twarde"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="nartyTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="StylJazdy" type="stylJazdyTyp"/>
+							<xs:element name="Dlugosc" type="xs:positiveInteger"/>
+							<xs:element name="Profil" type="profilPrzedmiotTyp"/>
+							<xs:element name="Trudnosc" type="trudnoscTyp"/>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="wiazaniaNartyTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DIN">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:minInclusive value="0"/>
+										<xs:maxInclusive value="18"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Trudnosc" type="trudnoscTyp"/>
+							<xs:element name="MaksymalnaWaga" type="xs:positiveInteger" minOccurs="0"/>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="butyNarciarskieTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Rozmiar" type="xs:positiveInteger"/>
+							<xs:element name="Twardosc" type="twardoscTyp"/>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="snowboardTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="StylJazdy" type="stylJazdyTyp"/>
+							<xs:element name="Dlugosc" type="xs:positiveInteger"/>
+							<xs:element name="Profil" type="profilPrzedmiotTyp"/>
+							<xs:element name="Trudnosc" type="trudnoscTyp"/>
+							<xs:element name="Flex" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:positiveInteger">
+										<xs:minInclusive value="1"/>
+										<xs:maxInclusive value="10"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="wiazaniaSnowboardoweTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Twardosc" type="twardoscTyp"/>
+							<xs:element name="Trudnosc" type="trudnoscTyp"/>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="butySnowboardoweTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Typ">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="strap-in"/>
+										<xs:enumeration value="step-in"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Rozmiar" type="xs:positiveInteger"/>
+							<xs:element name="Twardosc" type="twardoscTyp"/>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="kaskTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Kolor" type="str20Typ" minOccurs="0"/>
+							<xs:element name="Rozmiar" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="maly"/>
+										<xs:enumeration value="sredni"/>
+										<xs:enumeration value="duzy"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Regulacja">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="tak"/>
+										<xs:enumeration value="nie"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="googleTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="KolorSoczewek">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="S0"/>
+										<xs:enumeration value="S1"/>
+										<xs:enumeration value="S2"/>
+										<xs:enumeration value="S3"/>
+										<xs:enumeration value="S4"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Wentylacja">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="minimalna"/>
+										<xs:enumeration value="srednia"/>
+										<xs:enumeration value="wysoka"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="kijkiTyp">
+	<xs:complexContent>
+		<xs:extension base="przedmiotBazowyTyp"> <!-- dziedziczenie -->
+			<xs:sequence>
+				<xs:element name="DaneTechniczne">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Dlugosc" type="xs:positiveInteger"/>
+							<xs:element name="Technologie" type="technologieTyp" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+<!-- ============================================================================ -->
+
+<xs:complexType name="informacjeBazowyTyp">
+	<xs:sequence>
+		<xs:element name="Opis" type="opisTyp"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="magazynSprzetTyp">
+	<xs:sequence>
+		<xs:element name="Informacje" type="informacjeBazowyTyp"/>
+		<xs:choice maxOccurs="20"> <!-- tutaj laduja przygotowane elementy przedmiotow-->
+			<xs:element name="Narty" type="nartyTyp"/>
+			<xs:element name="Snowboard" type="snowboardTyp"/>
+			<xs:element name="ButyNarciarskie" type="butyNarciarskieTyp"/>
+			<xs:element name="ButySnowboardowe" type="butySnowboardoweTyp"/>
+			<xs:element name="Google" type="googleTyp"/>
+			<xs:element name="Kask" type="kaskTyp"/>
+			<xs:element name="WiazaniaNarciarskie" type="wiazaniaNartyTyp"/>
+			<xs:element name="WiazaniaSnowboardowe" type="wiazaniaSnowboardoweTyp"/>
+			<xs:element name="Kijki" type="kijkiTyp"/>
+		</xs:choice>
+	</xs:sequence>
+	<xs:attribute name="ids" type="idTyp" use="required"/>
+	<xs:attribute name="dostepny" type="xs:boolean"/>
+</xs:complexType>
+
+<xs:complexType name="kwotaWalutaTyp">
+	  <xs:simpleContent>
+        <xs:extension base="kwotaTyp">
+            <xs:attribute name="waluta" type="walutaTyp" use="required"/>
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="informacjeOfertaTyp">
+	<xs:complexContent>
+		<xs:extension base="informacjeBazowyTyp">
+			<xs:sequence>
+				<xs:element name="Cennik" minOccurs="1">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="Termin" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Kwota" type="kwotaWalutaTyp" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="nazwa" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:sequence>
+								<xs:element name="Kwota" type="kwotaWalutaTyp" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="ofertaTyp">
+	<xs:sequence>
+		<xs:element name="Informacje" type="informacjeOfertaTyp"/>
+		<xs:element name="Sprzet" type="magazynSprzetTyp" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="kategoriaTyp">
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="Kategoria" type="kategoriaTyp"/>
+		<xs:element name="Oferta" type="ofertaTyp"/>
+	</xs:choice>
+	<xs:attribute name="nazwa" type="xs:string" use="required"/>
+</xs:complexType>
+
+<!-- ============================================================================ -->
+<!-- ============================================================================ -->
+<!-- WYPOZYCZENIA =============================================================== -->
+
+<xs:simpleType name="telTyp">
+   <xs:restriction base="xs:string">
+		<xs:pattern value="[1-9][0-9]{8}"/>
+   </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="emailTyp">
+   <xs:restriction base="xs:string">
+		<xs:pattern value="[^@]+@[^\.]+\..+"/>
+   </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="peselTyp">
+   <xs:restriction base="xs:string">
+		<xs:pattern value="[0-9]{11}"/>
+   </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="kodPocztowyTyp">
+   <xs:restriction base="xs:string">
+		<xs:pattern value="[0-9]{2}\-[0-9]{3}"/>
+   </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="sprzetyTyp">
+	<xs:sequence minOccurs="0" maxOccurs="unbounded">
+		<xs:element name="Element">
+			<xs:complexType>
+				<xs:attribute name="idsref" type="idTyp" use="required"/>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="klientTyp">
+	<xs:sequence>
+		<xs:element name="DaneOsobowe">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="Imie" type="str20Typ"/>
+					<xs:element name="Nazwisko" type="str20Typ"/>
+					<xs:element name="Pesel" type="peselTyp"/>
+					<xs:element name="Adres">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Kraj" type="str50Typ"/>
+								<xs:element name="Miasto" type="str50Typ"/>
+								<xs:element name="Ulica" type="str50Typ"/>
+								<xs:element name="Dom" type="str50Typ"/>
+								<xs:element name="KodPocztowy" type="kodPocztowyTyp"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="DaneKontaktowe">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="NumerTelefonu" type="telTyp"/>
+					<xs:element name="Email" type="emailTyp" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="Wypozyczenia">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="Wypozyczenie" type="wypozyczenieTyp" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="wypozyczenieTyp">
+	<xs:sequence>
+		<xs:element name="Informacje">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="Kwota" type="kwotaWalutaTyp"/>
+					<xs:element name="DataWypozyczenia" type="xs:date"/>
+					<xs:element name="TerminZwrotu" type="xs:date"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="Sprzety" type="sprzetyTyp"/>
+	</xs:sequence>
+</xs:complexType>
+
+</xs:schema>

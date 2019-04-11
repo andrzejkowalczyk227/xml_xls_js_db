@@ -1,0 +1,63 @@
+<meta charset="UTF-8">
+<script type="text/javascript" src="main.js"></script>
+<link href="css/style_main.css" rel="stylesheet">
+
+<div class="title">
+	XML Projekt</br><b>&bdquo; Wypożyczalnia sprzętu zimowego &rdquo;</b>
+</div>
+<div class="subtitle">
+	Projekt nr 2
+</div>
+
+<div class="section">
+	<div class="section-element">
+		<label for="inputWlasnosc">Własność:</label><input type="text" id="inputWlasnosc" placeholder="np. Marka ">
+	</div>
+	<div class="section-element">
+		<label for="inputWartosc">Wartość:</label><input type="text" id="inputWartosc" placeholder="np. Salomon ">
+	</div>
+
+	<button onclick="wyswietlPoDowolnych()">Wyświetl</button>
+</div>
+<div class="section">
+	<div class="section-element">
+	<label for="trudnoscSelect">Trudność:</label>
+	<select id="trudnoscSelect">
+	  <option value="poczatkujacy">poczatkujacy</option>
+	  <option value="srednio-zaawansowany">srednio-zaawansowany</option>
+	  <option value="zaawansowany">zaawansowany</option>
+	</select>
+	</div>
+	<button onclick="wyswietlTrudnosciami()">Wyświetl</button>
+
+</div>
+<div class="section">
+	<div class="section-element">
+	<label for="typSelect">Przedmiot:</label>
+	<select id="typSelect">
+	  <option value="Narty">narty</option>
+	  <option value="Snowboard">snowboard</option>
+	  <option value="WiazaniaNarciarskie">wiazania narciarskie</option>
+	  <option value="ButyNarciarskie">buty narciarskie</option>
+	  <option value="ButySnowboardowe">buty snowboardowe</option>
+	  <option value="Google">google</option>
+	  <option value="Kask">kaski</option>
+	  <option value="Kijki">kijki</option>
+	</select>
+	</div>
+	<button onclick="wyswietlPoPrzedmiotach()">Wyświetl</button>
+
+</div>
+<div class="section">
+	<div class="section-element">
+	<label for="typSelect">Klienci:</label>
+	</div>
+	<button onclick="wyswietlKlientow()">Wyświetl</button>
+
+</div>
+<div class="end-information">
+	<div class="end-title"> Projekt wykonali:</div>
+	<div class="end-name">Andrzej Kowalczyk nr indexu: <b>345241</b></div>
+	<div class="end-name">Patryk Kluczak nr indexu: <b>368582</b></div>
+</div>
+<div id="container"><div>
